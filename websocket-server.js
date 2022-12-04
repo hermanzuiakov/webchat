@@ -5,7 +5,7 @@ const WebsocketServer = require('ws'),
 WSS.on('connection', (ws)=>{
     ws.on('message', (message)=>{
         WSS.clients.forEach((client)=>{
-            client.send(message);
+            client.send(message.toString());
         })
 
         console.log(message.toString());
