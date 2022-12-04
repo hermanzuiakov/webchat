@@ -2,21 +2,30 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Webchat App</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css">
+	<link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
-<h1>APP</h1>
+<main class="app">
+	<div class="container">
+		<h1>APP</h1>
 
-<div id="messages">
-</div>
+		<div id="messages">
+		</div>
 
-<form action="javascript:void(0)">
-	<label for="message">Message</label>
-	<input type="text" id="message">
+		<form action="javascript:void(0)">
+			<label for="message">Message</label>
+			<textarea type="text" id="message"></textarea>
 
-	<button type="submit">Send</button>
-</form>
+			<button type="submit">Send</button>
+		</form>
+	</div>
+</main>
 
 <script src="./websocket-client.js"></script>
 </body>

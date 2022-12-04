@@ -1,0 +1,122 @@
+.app {
+    background: #121212;
+    width: 100vw;
+    height: 100%;
+    color: #fff;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.app .opened:before {
+    content: "";
+    background: #10ff00;
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.app .closed:before {
+    content: "";
+    background: #ff0000;
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    width: 100%;
+    height: 600px;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 20px;
+    background: #1F1B24;
+    overflow-y: auto;
+}
+
+#messages::-webkit-scrollbar {
+    width: 10px;
+    margin-right: 5px;
+}
+#messages::-webkit-scrollbar-track {
+    background: #292929;
+}
+#messages::-webkit-scrollbar-thumb {
+    background: #03DAC5;
+}
+
+#messages .message {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+
+    padding: 10px 15px;
+    background: #03DAC5;
+    color: #000;
+    width: fit-content;
+    border-radius: 10px;
+    line-break: anywhere;
+}
+
+#messages .messagePhoto {
+    width: 50px;
+    height: 50px;
+}
+
+#messages .messagePhoto img {
+    width: -webkit-fill-available;
+}
+
+#messages .messageText {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#messages .messageText .name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.app form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.app form * {
+    outline: none;
+}
+.app form textarea {
+    padding: 5px 10px;
+    width: 100%;
+    min-height: 150px;
+    border-radius: 10px;
+}
+.app form label {
+    font-weight: 700;
+    font-size: 24px;
+}
+.app form button {
+    width: fit-content;
+    font-weight: 700;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    background: #9E55FC;
+    color: #fff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .app {
+        height: 100vh;
+    }
+    .app #messages {
+        height: 700px;
+    }
+}

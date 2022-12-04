@@ -7,10 +7,12 @@ WS.onmessage = (payload)=>{
 
 WS.onopen = () => {
     displayTitle("CONNECTED TO SERVER");
+    document.querySelector('h1').classList.add("opened");
     console.log("CONNECTION IS OPENED");
 }
 WS.onclose = () => {
     displayTitle("UNCONNECTED TO SERVER");
+    document.querySelector('h1').classList.add("closed");
     console.log("CONNECTION IS CLOSED");
 }
 
@@ -23,7 +25,13 @@ function displayMessages(message) {
 
     let messageBox = document.createElement('div');
     messageBox.classList.add('message');
-    messageBox.innerHTML = `<div class="message">${message}</div>`;
+    messageBox.innerHTML = `<div class="messagePhoto">
+                                <img src="./img/icon.svg" alt="">
+                            </div>
+                            <div class="messageText">
+                                <span class="name">Anonymus</span>
+                                <span class="msg">${message}</span>
+                            </div>`;
 
     messagesWrapper.appendChild(messageBox);
 }
