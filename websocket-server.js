@@ -3,5 +3,9 @@ const WebsocketServer = require('ws'),
 
 
 WSS.on('connection', (ws)=>{
+    ws.on('message', (message)=>{
+        console.log(message.toString());
+    });
+
     console.log('Connected');
 });
